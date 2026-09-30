@@ -1,0 +1,1057 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   VARIÁVEIS DE CORES
+========================= */
+
+:root {
+    /* Cores principais */
+    --cor-fundo: #cacaca;
+    --cor-principal: #707070;
+    --cor-escura: #222222;
+
+    /* Textos */
+    --cor-texto: rgb(226, 226, 226);
+    --cor-branca: #ffffff;
+
+    /* Hover e indicadores */
+    --cor-hover: #a5a5a5;
+    --cor-indicador: #777777;
+
+    /* Sombras */
+    --sombra-menu: rgba(116, 116, 116, 0.3);
+    --sombra-caixa: rgba(0, 0, 0, 0.35);
+    --sombra-forte: rgba(0, 0, 0, 0.4);
+
+}
+
+
+/* =========================
+   MODO NOTURNO
+========================= */
+
+body.dark {
+    --cor-fundo: #1e1e1e;
+    --cor-principal: #303030;
+    --cor-escura: #111111;
+
+    --cor-texto: #eeeeee;
+    --cor-branca: #ffffff;
+
+    --cor-hover: #505050;
+    --cor-indicador: #666666;
+
+    --sombra-menu: rgba(0, 0, 0, 0.5);
+    --sombra-caixa: rgba(0, 0, 0, 0.5);
+    --sombra-forte: rgba(0, 0, 0, 0.6);
+}
+
+
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    overflow-x: hidden;
+
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+#header {
+    width: 100%;
+
+    background-color: var(--cor-principal);
+
+    padding: 20px 30px 50px;
+
+    transition: background-color 0.3s ease;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+#container {
+    width: 100%;
+    flex: 1;
+
+    background-color: var(--cor-fundo);
+
+    padding: 1px 0 30px;
+
+    transition: background-color 0.3s ease;
+}
+
+form { 
+    background-color: var(--cor-principal);
+    color: var(--cor-texto);
+    width: 400px; 
+    margin: auto; /* Centraliza o formulário no espaço restante */
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2); 
+} 
+
+input[type ="date"],
+input[type ="tel"],
+input[type="number"], 
+input[type="text"], 
+input[type="email"], 
+select { 
+    width: 100%; 
+    padding: 8px; 
+    margin-top: 5px; 
+    margin-bottom: 15px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    box-sizing: border-box; 
+} 
+
+input[type="submit"], input[type="reset"] { 
+    padding: 10px 15px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    margin-right: 10px; 
+} 
+
+input[type="submit"] { 
+    background-color: #4CAF50; 
+    color: white; 
+} 
+
+input[type="submit"]:hover { 
+    background-color: #45a049; 
+} 
+
+input[type="reset"] { 
+    background-color: #f44336; 
+    color: white; 
+} 
+
+input[type="reset"]:hover { 
+    background-color: #d32f2f; 
+} 
+
+textarea { resize: none; } 
+
+/* =========================
+   FOOTER
+========================= */
+
+#footer {
+    width: 100%;
+
+    background-color: var(--cor-principal);
+    color: var(--cor-texto);
+
+    text-align: center;
+
+    padding: 30px 20px 20px;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+#footer h5 {
+    max-width: 100%;
+
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   TÍTULOS
+========================= */
+
+h1 {
+    text-align: center;
+
+    color: var(--cor-texto);
+
+    font-family:
+        'Lucida Sans',
+        'Lucida Sans Regular',
+        'Lucida Grande',
+        'Lucida Sans Unicode',
+        Geneva,
+        Verdana,
+        sans-serif;
+
+    font-size: clamp(24px, 4vw, 38px);
+
+    transition: color 0.3s ease;
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+.menu {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 0;
+
+    z-index: 1000;
+
+    pointer-events: none;
+}
+
+.menu-botao {
+    position: fixed;
+
+    top: 20px;
+    left: 20px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: var(--cor-principal);
+    color: var(--cor-branca);
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    z-index: 1002;
+
+    pointer-events: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.menu-conteudo {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: clamp(230px, 75vw, 280px);
+
+    height: 100vh;
+
+    padding: 90px 25px 25px;
+
+    background-color: var(--cor-principal);
+
+    transform: translateX(-100%);
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
+
+    box-shadow: 4px 0 15px var(--sombra-menu);
+
+    z-index: 1001;
+
+    pointer-events: auto;
+
+    overflow-y: auto;
+}
+
+.menu-conteudo.menu-aberto {
+    transform: translateX(0);
+}
+
+.menu-conteudo h2 {
+    margin-bottom: 30px;
+
+    color: var(--cor-branca);
+
+    font-size: clamp(20px, 5vw, 24px);
+}
+
+.menu-conteudo a {
+    display: block;
+
+    padding: 12px 10px;
+
+    color: var(--cor-branca);
+
+    text-decoration: none;
+
+    font-size: clamp(16px, 4vw, 18px);
+
+    border-radius: 6px;
+
+    transition: background-color 0.2s ease;
+}
+
+.menu-conteudo a:hover {
+    background-color: var(--cor-hover);
+}
+
+/* SUBMENU */
+
+.sub-menu {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.sub-menu-botao {
+    width: 100%;
+    padding: 12px 10px;
+
+    border: none;
+    background: none;
+
+    color: white;
+    text-align: left;
+
+    font-size: clamp(16px, 4vw, 18px);
+
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.sub-menu-botao:hover {
+    background-color: var(--cor-hover);
+}
+
+
+/* LISTA DO SUBMENU */
+
+.sub-menu-lista {
+    list-style: none;
+
+    margin: 0;
+    padding: 0 0 0 15px;
+
+    max-height: 0;
+    overflow: hidden;
+
+    transition: max-height 0.3s ease;
+}
+
+
+/* LINKS DO SUBMENU */
+
+.sub-menu-lista li a {
+    display: block;
+
+    padding: 8px 10px;
+
+    color: white;
+    text-decoration: none;
+
+    font-size: clamp(14px, 3.5vw, 16px);
+
+    border-radius: 6px;
+}
+
+.sub-menu-lista li a:hover {
+    background-color: var(--cor-hover);
+}
+
+
+/* SUBMENU ABERTO */
+
+.sub-menu-lista.sub-menu-aberto {
+    max-height: 150px;
+}
+
+
+/* =========================
+   BOTÃO VOLTAR AO TOPO
+========================= */
+
+.voltar-topo {
+    position: fixed;
+
+    right: clamp(15px, 4vw, 25px);
+    bottom: clamp(15px, 4vw, 25px);
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--cor-principal);
+    color: var(--cor-branca);
+
+    border-radius: 50%;
+
+    text-decoration: none;
+
+    font-size: 24px;
+
+    z-index: 900;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.voltar-topo:hover {
+    transform: scale(1.1);
+}
+
+
+/* =========================
+   GALERIA / CARDS
+========================= */
+
+.galeria {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(min(200px, 100%), 200px));
+
+    gap: 25px;
+
+    justify-content: center;
+
+    padding: 30px clamp(15px, 5vw, 40px);
+}
+
+.card {
+    width: 100%;
+
+    background-color: var(--cor-principal);
+
+    text-decoration: none;
+    color: var(--cor-texto);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.card img {
+    width: 100%;
+
+    aspect-ratio: 5 / 7;
+
+    height: auto;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.card h3 {
+    text-align: center;
+
+    padding: 15px;
+
+    margin: 0;
+
+    font-size: clamp(16px, 4vw, 20px);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* =========================
+   BOTÃO MODO DIURNO / NOTURNO
+========================= */
+
+.botao-modo {
+    display: block;
+
+    width: 100%;
+
+    padding: 12px 10px;
+    margin-top: 15px;
+
+    border: none;
+    outline: none;
+
+    background: none;
+
+    color: var(--cor-branca);
+
+    text-align: left;
+
+    font-family: inherit;
+    font-size: clamp(16px, 4vw, 18px);
+
+    cursor: pointer;
+
+    border-radius: 6px;
+
+    transition: background-color 0.2s ease;
+}
+
+.botao-modo:hover {
+    background-color: var(--cor-hover);
+}
+/*======================
+ BOTÃO DE IDIOMA 
+ =======================*/
+
+.botao-idioma {
+    position: fixed;
+
+    top: 20px;
+    right: 20px;
+
+    padding: 10px 15px;
+
+    border: none;
+    border-radius: 6px;
+
+    background-color: var(--cor-principal);
+    color: var(--cor-branca);
+
+    font-family: inherit;
+    font-size: 16px;
+
+    cursor: pointer;
+
+    z-index: 1002;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.botao-idioma a {
+    color: var(--cor-branca);
+    text-decoration: none;
+}
+
+.botao-idioma:hover {
+    background-color: var(--cor-hover);
+}
+
+.botao-idioma1 {
+    position: fixed;
+
+    top: 20px;
+    right: 115px;
+
+    padding: 10px 15px;
+
+    border: none;
+    border-radius: 6px;
+
+    background-color: var(--cor-principal);
+    color: var(--cor-branca);
+
+    font-family: inherit;
+    font-size: 16px;
+
+    cursor: pointer;
+
+    z-index: 1002;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.botao-idioma1 a {
+    color: var(--cor-branca);
+    text-decoration: none;
+}
+
+.botao-idioma1:hover {
+    background-color: var(--cor-hover);
+}
+
+
+/* =========================
+   CARROSSEL
+========================= */
+
+.carrossel {
+    width: min(80%, 1000px);
+
+    margin: 30px auto;
+
+    overflow: hidden;
+}
+
+.slides {
+    width: 100%;
+    position: relative;
+}
+
+.slide {
+    display: none;
+
+    width: 100%;
+}
+
+.slide.ativo {
+    display: block;
+}
+
+.slide img {
+    width: 100%;
+
+    aspect-ratio: 16 / 7;
+
+    height: auto;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.indicadores {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 10px;
+
+    padding: 0 10px;
+}
+
+.indicador {
+    width: 40px;
+    height: 5px;
+
+    background-color: var(--cor-indicador);
+
+    border-radius: 5px;
+
+    transition:
+        0.3s,
+        background-color 0.3s ease;
+}
+
+.indicador.ativo {
+    background-color: var(--cor-branca);
+
+    width: 60px;
+}
+
+
+/* =========================
+   TEXTO + IMAGEM
+========================= */
+
+.texto-imagem {
+    width: min(80%, 1100px);
+
+    margin: 40px auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 25px;
+
+    color: var(--cor-texto);
+
+    background-color: var(--cor-principal);
+
+    border-radius: 12px;
+
+    box-shadow: 0 5px 15px var(--sombra-caixa);
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.texto-imagem img {
+    width: clamp(180px, 30vw, 280px);
+
+    aspect-ratio: 1 / 1;
+
+    height: auto;
+
+    object-fit: cover;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    transition: transform 0.3s ease;
+}
+
+.texto-imagem img:hover {
+    transform: scale(1.08);
+}
+
+.texto-imagem .conteudo {
+    flex: 1;
+
+    min-width: 0;
+
+    color: var(--cor-texto);
+
+    font-size: clamp(16px, 2vw, 18px);
+
+    line-height: 1.7;
+
+    text-align: justify;
+}
+
+
+/* =========================
+   TEXTO EXTENSO
+========================= */
+
+.texto-extenso {
+    width: min(80%, 1100px);
+
+    margin: 50px auto;
+
+    padding: clamp(20px, 4vw, 40px);
+
+    background-color: var(--cor-principal);
+
+    border-radius: 12px;
+
+    box-shadow: 0 8px 20px var(--sombra-forte);
+
+    transition:
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.texto-extenso .conteudo {
+    width: min(80%, 900px);
+
+    margin: auto;
+
+    color: var(--cor-texto);
+
+    font-size: clamp(16px, 2vw, 18px);
+
+    line-height: 1.8;
+
+    text-align: justify;
+
+    overflow-wrap: break-word;
+}
+
+.texto-extenso .conteudo p {
+    margin-bottom: 20px;
+
+    color: var(--cor-texto);
+}
+
+
+/* =========================
+   TABLETS
+   Até aproximadamente 768px
+========================= */
+
+@media (max-width: 768px) {
+
+    #header {
+        padding: 20px 20px 45px;
+    }
+
+    .galeria {
+        grid-template-columns:
+            repeat(auto-fit, minmax(170px, 200px));
+
+        gap: 20px;
+
+        padding: 25px 15px;
+    }
+
+    .carrossel {
+        width: 90%;
+    }
+
+    .slide img {
+        aspect-ratio: 16 / 8;
+    }
+
+    .texto-imagem {
+        width: 90%;
+
+        gap: 20px;
+
+        padding: 20px;
+    }
+
+    .texto-imagem img {
+        width: 220px;
+    }
+
+    .texto-extenso {
+        width: 90%;
+
+        padding: 30px;
+    }
+
+    .texto-extenso .conteudo {
+        width: 90%;
+    }
+}
+
+
+/* =========================
+   CELULARES
+   Até aproximadamente 600px
+========================= */
+
+@media (max-width: 600px) {
+
+    #header {
+        padding: 75px 15px 30px;
+    }
+
+    #footer {
+        padding: 25px 15px 20px;
+    }
+
+    #footer h5 {
+        font-size: 12px;
+    }
+
+
+    /* MENU */
+
+    .menu-botao {
+        top: 15px;
+        left: 15px;
+
+        width: 42px;
+        height: 42px;
+
+        font-size: 22px;
+    }
+
+    .menu-conteudo {
+        width: min(280px, 85vw);
+
+        padding: 80px 20px 25px;
+    }
+
+    @media (max-width: 600px) {
+
+    .botao-modo {
+        left: 20px;
+        right: 20px;
+        width: calc(100% - 40px);
+
+        bottom: 20px;
+
+        font-size: 15px;
+    }
+
+}
+
+
+    /* GALERIA */
+
+    .galeria {
+        width: 100%;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 15px;
+
+        padding: 20px 15px;
+    }
+
+    .card h3 {
+        padding: 12px 8px;
+
+        font-size: 16px;
+    }
+
+
+    /* CARROSSEL */
+
+    .carrossel {
+        width: 94%;
+
+        margin: 20px auto;
+    }
+
+    .slide img {
+        aspect-ratio: 16 / 9;
+    }
+
+    .indicadores {
+        gap: 5px;
+    }
+
+    .indicador {
+        width: 25px;
+        height: 4px;
+    }
+
+    .indicador.ativo {
+        width: 40px;
+    }
+
+
+    /* TEXTO + IMAGEM */
+
+    .texto-imagem {
+        width: 94%;
+
+        margin: 30px auto;
+
+        padding: 18px;
+
+        /*
+           Aqui o layout deixa de ser
+           lado a lado e passa a ser
+           vertical.
+        */
+
+        flex-direction: column;
+
+        gap: 20px;
+
+        align-items: stretch;
+    }
+
+    .texto-imagem img {
+        width: min(100%, 280px);
+
+        margin: auto;
+
+        aspect-ratio: 1 / 1;
+    }
+
+    .texto-imagem .conteudo {
+        width: 100%;
+
+        font-size: 16px;
+
+        line-height: 1.6;
+
+        text-align: left;
+    }
+
+
+    /* TEXTO EXTENSO */
+
+    .texto-extenso {
+        width: 94%;
+
+        margin: 30px auto;
+
+        padding: 20px 15px;
+    }
+
+    .texto-extenso .conteudo {
+        width: 100%;
+
+        font-size: 16px;
+
+        line-height: 1.7;
+
+        text-align: left;
+    }
+
+    .texto-extenso .conteudo p {
+        margin-bottom: 15px;
+    }
+
+
+    /* BOTÃO TOPO */
+
+    .voltar-topo {
+        width: 40px;
+        height: 40px;
+
+        right: 15px;
+        bottom: 15px;
+
+        font-size: 20px;
+    }
+}
+
+
+/* =========================
+   CELULARES MUITO PEQUENOS
+   Até aproximadamente 400px
+========================= */
+
+@media (max-width: 400px) {
+
+    .galeria {
+        grid-template-columns: 1fr;
+
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .card {
+        max-width: 240px;
+
+        margin: auto;
+    }
+
+    .texto-imagem,
+    .texto-extenso {
+        width: 92%;
+    }
+
+    .texto-imagem {
+        padding: 15px;
+    }
+
+    .texto-extenso {
+        padding: 18px 12px;
+    }
+
+    .menu-conteudo {
+        width: 85vw;
+    }
+
+    .footer h5 {
+        font-size: 11px;
+    }
+}

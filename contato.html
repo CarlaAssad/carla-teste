@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <title>Etec de Portas Abertas</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="img/jpg" href="img/icone.jpg">
+        <link rel="stylesheet" type="text/css" href="controls.css">
+    </head>
+    <body id="topo">
+        <div id="header">
+
+            <button id="idioma" class="botao-idioma1">
+                <a href="contato-in.html">Inglês</a>
+            </button>
+
+            <button id="idioma" class="botao-idioma">
+                <a href="contato.html">Português</a>
+            </button>
+
+            <nav class="menu">
+
+                <button class="menu-botao" id="menuBotao">
+                ☰
+                </button>
+
+                <div class="menu-conteudo">
+
+                    <h2>Menu</h2>
+
+                    <a href="index.html">Home</a>
+                    <a href="hipnoterapia.html">Hipnoterapia</a>
+                    <a href="reflexologia.html">Reflexologia</a>
+                    <a href="bibliografia.html">Bibliografia</a>
+                    <a href="yoga.html">Yoga</a>
+                    <a href="contato.html">Contato</a>
+
+                    <nav class="sub-menu">
+                        <button class="sub-menu-botao" id="subMenuBotao">
+                            <span>▶</span> Créditos
+                        </button>
+
+                        <ul class="sub-menu-lista" id="subMenuLista">
+                            <li>
+                                <a href="orientadores.html">Orientadores</a>
+                            </li>
+                            <li>
+                                <a href="desenvolvedores.html">Desenvolvedores</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <button id="modo" class="botao-modo">🌙 Modo noturno</button>
+
+                </div>
+
+            </nav>
+
+        </div>
+        <div id="container">
+
+            <a href="#topo" class="voltar-topo">↑</a>
+
+            <form>
+                Nome:<b>(Obrigatorio)</b>
+                <input type="text" id="nome" name="nome" required minlength="3" maxlength="50" placeholder="Digite o nome do aluno">
+                <br><br>
+
+                Telefone:<b>(Obrigatorio)</b>
+                <input type="tel" required maxlength="15" name="phone" pattern="\([0-9] {2}\)[0-9] {4,6}-[0-9] {3,4}$">
+
+                Email:<b>(Obrigatorio)</b>
+                <input type="email" required class="input-text"name="email"  pattern="[a-zA-Z0-9. %+-]+@[a-zA-Z]+\.[a-z] {2,4}$" placeholder="Digite o email do usuário">
+                <br><br>
+                
+                Avalie nosso site:<b>(Opcional)</b>
+                    <select name="avaliacao" id="avaliacao">
+                        <option value="">deixe sua avaliação!!</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+
+                Comentario:<b>(Opcional)</b><br>
+				<textarea cols="40" rows="20" placeholder="Deixe seu comentario aqui!"></textarea>
+                <br><br>
+
+                <input type="submit"></button>
+                <input type="reset"></button>
+            </form>
+            <br>
+
+        </div>
+        <div id="footer">
+            <h5>ETEC DE HORTOLÂNDIA 2026 – &copyTodos os direitos reservados Trabalho acadêmico sem fins lucrativos.</h5>
+        </div>
+
+        <script src="menu.js"></script>
+        <script src="tema.js"></script>
+
+    </body>
+</html>

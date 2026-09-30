@@ -1,0 +1,76 @@
+<!doctype html> 
+<html lang="en"> 
+<head> 
+    <title>Etec Open Doors</title> 
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="icon" type="img/jpg" href="img/icone.jpg"> 
+    <link rel="stylesheet" type="text/css" href="controls.css"> 
+</head> 
+<body id="topo"> 
+    <div id="header"> 
+        <button id="idioma" class="botao-idioma1">
+            <a href="contato-in.html">Inglês</a>
+        </button>
+
+        <button id="idioma" class="botao-idioma">
+            <a href="contato.html">Português</a>
+        </button>
+        <nav class="menu"> 
+            <button class="menu-botao" id="menuBotao"> ☰ </button> 
+            <div class="menu-conteudo"> 
+                <h2>Menu</h2> 
+                <a href="index-in.html">Home</a> 
+                <a href="hipnoterapia-in.html">Hypnotherapy</a>  
+                <a href="reflexologia-in.html">Reflexology</a>
+                <a href="bibliografia-in.html">Bibliography</a>
+                <a href="yoga-in.html">Yoga</a> 
+                <a href="contato-in.html">Contact</a> 
+                <nav class="sub-menu"> 
+                    <button class="sub-menu-botao" id="subMenuBotao"> 
+                        <span>▶</span> Credits 
+                    </button> 
+                    <ul class="sub-menu-lista" id="subMenuLista"> 
+                        <li> <a href="orientadores-in.html">Advisors</a> </li> 
+                        <li> <a href="desenvolvedores-in.html">Developers</a> </li> 
+                    </ul> 
+                </nav> 
+                <button id="modo" class="botao-modo">🌙 Dark mode</button> 
+            </div> 
+        </nav> 
+    </div> 
+    <div id="container"> 
+        <a href="#topo" class="voltar-topo">↑</a> 
+        <form> 
+            Name:<b>(Required)</b> 
+            <input type="text" id="nome" name="nome" required minlength="3" maxlength="50" placeholder="Enter student's name"> 
+            <br><br> 
+            Phone:<b>(Required)</b>
+            <input type="tel" required maxlength="15" name="phone" pattern="\([0-9] {2}\)[0-9] {4,6}-[0-9] {3,4}$">
+            Email:<b>(Required)</b>
+            <input type="email" required class="input-text" name="email" pattern="[a-zA-Z0-9. %+-]+@[a-zA-Z]+\.[a-z] {2,4}$" placeholder="Enter user email"> 
+            <br><br> 
+            Rate our website:<b>(Optional)</b>
+                    <select name="avaliacao" id="avaliacao">
+                        <option value="">Leave your review!!</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+            Comment:<b>(Optional)</b><br> 
+            <textarea cols="40" rows="20"  placeholder="Leave your comment here!"></textarea><br><br> 
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </form><hr> 
+        <br> 
+    </div> 
+    <div id="footer"> 
+        <h5>ETEC DE HORTOLÂNDIA 2026 – &copyAll rights reserved. Non-profit academic work.</h5> 
+    </div> 
+    <script src="menu.js"></script> 
+    <script src="tema.js"></script> 
+</body> 
+</html>
